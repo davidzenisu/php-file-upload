@@ -1,8 +1,9 @@
 <?php
-$target_dir = "uploads/";
+$target_dir = "uploads";
 $uploadOk = 1;
-$imageFileType = "." . strtolower($_POST["fileType"]);
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]) . $imageFileType;
+$fileName = strtolower($_POST["fileName"]);
+$fileType = strtolower($_POST["fileType"]);
+$target_file = "$target_dir/$fileName.$fileType";
 
 // Check if file already exists
 if (file_exists($target_file)) {
