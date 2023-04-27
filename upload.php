@@ -1,7 +1,7 @@
 <?php
 $target_dir = "uploads";
 $uploadOk = 1;
-$fileName = strtolower($_POST["fileName"]);
+$fileName = $_POST["fileName"];
 $fileType = strtolower($_POST["fileType"]);
 $target_file = "$target_dir/$fileName.$fileType";
 
@@ -16,7 +16,6 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
   echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
-
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
